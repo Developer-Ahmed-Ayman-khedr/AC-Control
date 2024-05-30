@@ -35,7 +35,6 @@
   GLOBAL FUNCTIONS Prototypes
 *******************************************/
 
-
 void COOLINGInit();
 
 void COOLINGChoise(u8 choise);

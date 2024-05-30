@@ -20,6 +20,7 @@ void COOLINGInit(){
 }
 
 void COOLINGChoise(u8 choise){
+	//Start cooling motor
 	if(choise==COOLINGSTART){
 		//Start Enable
 		DIO_setPinValue(DIO_PINC5,DIO_HIGH);
