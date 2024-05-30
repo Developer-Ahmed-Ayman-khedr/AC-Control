@@ -1,12 +1,12 @@
 /*
- * main.h
+ * TEMP_CONTROL_INT.h
  *
- *  Created on: May 28, 2024
+ *  Created on: May 30, 2024
  *      Author: ahmed
  */
 
-#ifndef APP_MAIN_H_
-#define APP_MAIN_H_
+#ifndef APP_TEMP_TEMP_INT_H_
+#define APP_TEMP_TEMP_INT_H_
 
 /******************************************
   INCLUDES
@@ -15,20 +15,6 @@
 #include "DIO_INT.h"
 
 #include "ADC_INT.h"
-
-#include "GI_INT.h"
-
-#include "EXT_INT.h"
-
-#include "UART_INT.h"
-
-#include "SS_INT.h"
-
-#include "TEMP_INT.h"
-
-#include "HEATING_INT.h"
-
-#include "COOLING_INT.h"
 
 /******************************************
   Global Data TYPES AND STRUCTURES
@@ -49,6 +35,8 @@
   GLOBAL FUNCTIONS Prototypes
 *******************************************/
 
-int main();
+void TEMPCheckInit();
 
-#endif /* APP_MAIN_H_ */
+f32 TEMPCheckStart();
+
+#endif /* APP_TEMP_TEMP_INT_H_ */
