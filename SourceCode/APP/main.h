@@ -12,6 +12,7 @@
   INCLUDES
 *******************************************/
 
+#include "DIO_INT.h"
 
 /******************************************
   Global Data TYPES AND STRUCTURES
