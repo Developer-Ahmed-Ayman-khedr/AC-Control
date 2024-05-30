@@ -1,34 +1,19 @@
 /*
- * main.h
+ * GI_INT.h
  *
- *  Created on: May 28, 2024
+ *  Created on: May 16, 2024
  *      Author: ahmed
  */
 
-#ifndef APP_MAIN_H_
-#define APP_MAIN_H_
+#ifndef MCAL_GI_GI_INT_H_
+#define MCAL_GI_GI_INT_H_
+
 
 /******************************************
   INCLUDES
 *******************************************/
 
 #include "DIO_INT.h"
-
-#include "ADC_INT.h"
-
-#include "GI_INT.h"
-
-#include "EXT_INT.h"
-
-#include "UART_INT.h"
-
-#include "SS_INT.h"
-
-#include "TEMP_INT.h"
-
-#include "HEATING_INT.h"
-
-#include "COOLING_INT.h"
 
 /******************************************
   Global Data TYPES AND STRUCTURES
@@ -39,6 +24,11 @@
   GLOBAL CONSTANT MACROS
 *******************************************/
 
+//Register controlling Global Interrupt
+#define SREG (*(volatile u8*)0x5F)
+
+//Bits
+#define I 7
 
 /******************************************
   GLOBAL FUNCTIONS MACROS
@@ -49,6 +39,9 @@
   GLOBAL FUNCTIONS Prototypes
 *******************************************/
 
-int main();
+void GI_enable();
 
-#endif /* APP_MAIN_H_ */
+void GI_desable();
+
+
+#endif /* MCAL_GI_GI_INT_H_ */
