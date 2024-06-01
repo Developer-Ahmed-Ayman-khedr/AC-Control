@@ -20,7 +20,7 @@ int main(){
 	HEATINGInit();
 
 	//Cooling Motor initialize
-
+	COOLINGInit();
 
 	while(1){
 		SS_writeNum(TEMPCheckStart());
