@@ -30,6 +30,8 @@
 
 #include "COOLING_INT.h"
 
+#include "BUTTONS_INT.h"
+
 /******************************************
   Global Data TYPES AND STRUCTURES
 *******************************************/

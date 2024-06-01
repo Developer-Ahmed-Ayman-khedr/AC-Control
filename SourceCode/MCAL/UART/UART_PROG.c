@@ -48,6 +48,29 @@ void UART_sendStr(u8* str)
 	}
 }
 
+void UART_sendNum(u8 num)
+{
+	u8 arr[10];
+	s8 counter =0 ;
+	if (num==0)
+	{
+		UART_sendData(0);
+		//return;
+	}
+	while (num>0)
+	{
+		arr[counter]=((num%10)+48);
+		num=num/10;
+		counter ++ ;
+
+	}
+	counter -- ;
+	while (counter>=0)
+	{
+		UART_sendData(arr[counter]);
+		counter -- ;
+	}
+}
 
 u8 UART_receiveData()
 {

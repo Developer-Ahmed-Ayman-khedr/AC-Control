@@ -1,12 +1,12 @@
 /*
- * HEATING_INT.h
+ * COOLING_INT.h
  *
- *  Created on: May 30, 2024
+ *  Created on: Jun 1, 2024
  *      Author: ahmed
  */
 
-#ifndef APP_HEATING_HEATING_INT_H_
-#define APP_HEATING_HEATING_INT_H_
+#ifndef APP_COOLING_COOLING_INT_H_
+#define APP_COOLING_COOLING_INT_H_
 
 /******************************************
   INCLUDES
@@ -23,9 +23,9 @@
   GLOBAL CONSTANT MACROS
 *******************************************/
 
-#define HEATINGSTOP 0
+#define COOLINGSTOP 0
 
-#define HEATINGSTART 1
+#define COOLINGSTART 1
 
 /******************************************
   GLOBAL FUNCTIONS MACROS
@@ -36,8 +36,8 @@
   GLOBAL FUNCTIONS Prototypes
 *******************************************/
 
-void HeatingInit();
+void CoolingInit();
 
-void HeatingChoise(u8 choise);
+void CoolingChoise(u8 choise);
 
-#endif /* APP_HEATING_HEATING_INT_H_ */
+#endif /* APP_COOLING_COOLING_INT_H_ */

@@ -80,6 +80,8 @@ void UART_sendData(u8 data);
 
 void UART_sendStr(u8* str);
 
+void UART_sendNum(u8 num);
+
 u8 UART_receiveData();
 
 void UART_INT_init(u8 state);
