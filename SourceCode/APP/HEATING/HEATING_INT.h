@@ -23,9 +23,9 @@
   GLOBAL CONSTANT MACROS
 *******************************************/
 
-#define HEATINGSTART 0
+#define HEATINGSTOP 0
 
-#define HEATINGSTOP 1
+#define HEATINGSTART 1
 
 /******************************************
   GLOBAL FUNCTIONS MACROS
@@ -36,8 +36,8 @@
   GLOBAL FUNCTIONS Prototypes
 *******************************************/
 
-void HEATINGInit();
+void HeatingInit();
 
-void HEATINGChoise(u8 choise);
+void HeatingChoise(u8 choise);
 
 #endif /* APP_HEATING_HEATING_INT_H_ */

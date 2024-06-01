@@ -1,18 +1,24 @@
 /*
- * COOLING_INT.h
+ * BUTTON_INT.h
  *
  *  Created on: Jun 1, 2024
  *      Author: ahmed
  */
 
-#ifndef APP_COOLING_COOLING_INT_H_
-#define APP_COOLING_COOLING_INT_H_
+#ifndef APP_BUTTONS_BUTTONS_INT_H_
+#define APP_BUTTONS_BUTTONS_INT_H_
 
 /******************************************
   INCLUDES
 *******************************************/
 
 #include "DIO_INT.h"
+
+#include "GI_INT.h"
+
+#include "EXT_INT.h"
+
+#include "UART_INT.h"
 
 /******************************************
   Global Data TYPES AND STRUCTURES
@@ -23,9 +29,6 @@
   GLOBAL CONSTANT MACROS
 *******************************************/
 
-#define COOLINGSTOP 0
-
-#define COOLINGSTART 1
 
 /******************************************
   GLOBAL FUNCTIONS MACROS
@@ -36,8 +39,8 @@
   GLOBAL FUNCTIONS Prototypes
 *******************************************/
 
-void CoolingInit();
+void ButtonsInit();
 
-void CoolingChoise(u8 choise);
+u8 ButtonsPushed();
 
-#endif /* APP_COOLING_COOLING_INT_H_ */
+#endif /* APP_BUTTONS_BUTTONS_INT_H_ */

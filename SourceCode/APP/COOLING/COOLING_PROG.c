@@ -8,7 +8,7 @@
 
 #include "COOLING_INT.h"
 
-void COOLINGInit(){
+void CoolingInit(){
 	//Enable PIN
 	DIO_setPinDir(DIO_PINC5,DIO_OUTPUT);
 
@@ -18,7 +18,7 @@ void COOLINGInit(){
 	DIO_setPinDir(DIO_PINC4,DIO_OUTPUT);
 }
 
-void COOLINGChoise(u8 choise){
+void CoolingChoise(u8 choise){
 	if(choise==COOLINGSTART){
 			//Start Enable
 			DIO_setPinValue(DIO_PINC5,DIO_HIGH);

@@ -7,7 +7,7 @@
 
 #include "HEATING_INT.h"
 
-void HEATINGInit(){
+void HeatingInit(){
 	//Enable PIN
 	DIO_setPinDir(DIO_PINC2,DIO_OUTPUT);
 
@@ -17,13 +17,13 @@ void HEATINGInit(){
 	DIO_setPinDir(DIO_PINC1,DIO_OUTPUT);
 }
 
-void HEATINGChoise(u8 choise){
+void HeatingChoise(u8 choise){
 	if(choise==HEATINGSTART){
 		//Start Enable
 		DIO_setPinValue(DIO_PINC2,DIO_HIGH);
 
 		//Start Motor
-		DIO_setPinValue(DIO_PINC2,DIO_HIGH);
+		DIO_setPinValue(DIO_PINC0,DIO_HIGH);
 		DIO_setPinValue(DIO_PINC1,DIO_LOW);
 	}
 	else if(choise==HEATINGSTOP){
@@ -31,7 +31,7 @@ void HEATINGChoise(u8 choise){
 		DIO_setPinValue(DIO_PINC2,DIO_LOW);
 
 		//Stop Motor
-		DIO_setPinValue(DIO_PINC2,DIO_LOW);
+		DIO_setPinValue(DIO_PINC0,DIO_LOW);
 		DIO_setPinValue(DIO_PINC1,DIO_LOW);
 	}
 }
