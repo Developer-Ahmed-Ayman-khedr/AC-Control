@@ -14,6 +14,8 @@
 
 #include "DIO_INT.h"
 
+#include "TIMER0_INT.h"
+
 /******************************************
   Global Data TYPES AND STRUCTURES
 *******************************************/
@@ -38,6 +40,6 @@
 
 void CoolingInit();
 
-void CoolingChoise(u8 choise);
+void CoolingChoise(u8 speed);
 
 #endif /* APP_COOLING_COOLING_INT_H_ */
