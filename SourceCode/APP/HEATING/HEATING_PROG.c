@@ -8,30 +8,31 @@
 #include "HEATING_INT.h"
 
 void HeatingInit(){
-	//Enable PIN
-	DIO_setPinDir(DIO_PINC2,DIO_OUTPUT);
-
 	//Control PINs
-	DIO_setPinDir(DIO_PINC0,DIO_OUTPUT);
+	DIO_setPinDir(DIO_PINC6,DIO_OUTPUT);
 
-	DIO_setPinDir(DIO_PINC1,DIO_OUTPUT);
+	DIO_setPinDir(DIO_PINC7,DIO_OUTPUT);
 }
 
-void HeatingChoise(u8 choise){
-	if(choise==HEATINGSTART){
-		//Start Enable
-		DIO_setPinValue(DIO_PINC2,DIO_HIGH);
+void HeatingChoise(u8 speed){
+	if(speed>HEATINGSTOP){
+		//Start Timer
+		TIMER0_initFPWM();
+
+		TIMER0_start(TIMER0_DIV64);
+
+		TIMER0_setOCR(speed);
 
 		//Start Motor
-		DIO_setPinValue(DIO_PINC0,DIO_HIGH);
-		DIO_setPinValue(DIO_PINC1,DIO_LOW);
+		DIO_setPinValue(DIO_PINC6,DIO_HIGH);
+		DIO_setPinValue(DIO_PINC7,DIO_LOW);
 	}
-	else if(choise==HEATINGSTOP){
+	else if(speed==HEATINGSTOP){
 		//Stop Enable
-		DIO_setPinValue(DIO_PINC2,DIO_LOW);
+		TIMER0_start(TIMER0_STOP);
 
 		//Stop Motor
-		DIO_setPinValue(DIO_PINC0,DIO_LOW);
-		DIO_setPinValue(DIO_PINC1,DIO_LOW);
+		DIO_setPinValue(DIO_PINC6,DIO_LOW);
+		DIO_setPinValue(DIO_PINC7,DIO_LOW);
 	}
 }

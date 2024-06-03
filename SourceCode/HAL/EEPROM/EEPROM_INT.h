@@ -1,12 +1,13 @@
 /*
- * HEATING_INT.h
+ * EEPROM_INT.h
  *
- *  Created on: May 30, 2024
+ *  Created on: Jun 3, 2024
  *      Author: ahmed
  */
 
-#ifndef APP_HEATING_HEATING_INT_H_
-#define APP_HEATING_HEATING_INT_H_
+#ifndef HAL_EEPROM_EEPROM_INT_H_
+#define HAL_EEPROM_EEPROM_INT_H_
+
 
 /******************************************
   INCLUDES
@@ -14,7 +15,7 @@
 
 #include "DIO_INT.h"
 
-#include "TIMER0_INT.h"
+#include "I2C_INT.h"
 
 /******************************************
   Global Data TYPES AND STRUCTURES
@@ -25,10 +26,6 @@
   GLOBAL CONSTANT MACROS
 *******************************************/
 
-#define HEATINGSTOP 0
-
-#define HEATINGSTART 1
-
 /******************************************
   GLOBAL FUNCTIONS MACROS
 *******************************************/
@@ -38,8 +35,10 @@
   GLOBAL FUNCTIONS Prototypes
 *******************************************/
 
-void HeatingInit();
+void EEPROM_Init();
 
-void HeatingChoise(u8 speed);
+void EEPROM_SendByte(u8 byte,u16 location);
 
-#endif /* APP_HEATING_HEATING_INT_H_ */
+void EEPROM_ReadByteNACK(u8* byte,u16 location);
+
+#endif /* HAL_EEPROM_EEPROM_INT_H_ */

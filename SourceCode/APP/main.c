@@ -7,7 +7,13 @@
 
 #include "main.h"
 
+//extern u8 EEPROM_counter;
+
 int main(){
+
+
+	u8 UserSetTemp, set_speed;
+
 
 	//Temperature initialize
 	TEMPCheckInit();
@@ -27,38 +33,33 @@ int main(){
 	//Buttons initialize
 	ButtonsInit();
 
-	u8 MainFlage = 0, UserSetTemp;
+	//EEPROM initialize
+	EEPROM_Init();
+
+
+
 	while(1){
 
-		UserSetTemp = ButtonsPushed();
+		ButtonsPushed(&UserSetTemp);
 
-		SS_writeNum(TEMPCheckStart());
+		SS_writeNum(UserSetTemp);
 
-		switch(MainFlage){
-		case 1:
-			//Real temp is higher than User set temp
-			if(TEMPCheckStart()>UserSetTemp){
-				CoolingChoise(COOLINGSTART);
-				HeatingChoise(HEATINGSTOP);
-			}
-			MainFlage = 2;
-			break;
-		case 2:
-			//Real temp is Lower than User set temp
-			if(TEMPCheckStart()<UserSetTemp){
-				HeatingChoise(HEATINGSTART);
-				CoolingChoise(COOLINGSTOP);
-			}
-			break;
-		case 3:
-			//Real temp is Equal to User set temp
-			if(TEMPCheckStart()==UserSetTemp){
-				HeatingChoise(HEATINGSTOP);
-				CoolingChoise(COOLINGSTOP);
-			}
-			break;
-		default:
-			break;
+		//SS_writeNum(EEPROM_counter);
+		set_speed = ((TEMPCheckStart()/(TEMPCheckStart()+UserSetTemp))*255);
+		//Real temp is higher than User set temp
+		if(TEMPCheckStart()>UserSetTemp){
+			CoolingChoise(set_speed);
+			HeatingChoise(HEATINGSTOP);
+		}
+		//Real temp is Lower than User set temp
+		else if(TEMPCheckStart()<UserSetTemp){
+			HeatingChoise(set_speed);
+			CoolingChoise(COOLINGSTOP);
+		}
+		//Real temp is Equal to User set temp
+		else{
+			HeatingChoise(HEATINGSTOP);
+			CoolingChoise(COOLINGSTOP);
 		}
 	}
 	return 0;

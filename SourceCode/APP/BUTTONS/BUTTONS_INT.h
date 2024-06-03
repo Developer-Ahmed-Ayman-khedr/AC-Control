@@ -20,6 +20,8 @@
 
 #include "UART_INT.h"
 
+#include "EEPROM_INT.h"
+
 /******************************************
   Global Data TYPES AND STRUCTURES
 *******************************************/
@@ -41,6 +43,6 @@
 
 void ButtonsInit();
 
-u8 ButtonsPushed();
+void ButtonsPushed(u8* UserSetTemp_ptr);
 
 #endif /* APP_BUTTONS_BUTTONS_INT_H_ */
