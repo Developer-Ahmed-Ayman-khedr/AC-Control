@@ -39,7 +39,6 @@ int main(){
 
 
 	while(1){
-
 		ButtonsPushed(&UserSetTemp);
 
 		SS_writeNum(UserSetTemp);

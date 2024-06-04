@@ -10,8 +10,6 @@
 
 u8 EEPROM_counter ;
 
-
-
 void Up_Button(){
 	EEPROM_ReadByteNACK(&EEPROM_counter,0x1);
 	_delay_ms(100);
