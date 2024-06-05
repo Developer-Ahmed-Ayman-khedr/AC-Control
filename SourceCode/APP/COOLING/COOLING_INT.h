@@ -14,7 +14,7 @@
 
 #include "DIO_INT.h"
 
-#include "TIMER0_INT.h"
+#include "../../MCAL/TIMER1/TIMER1_INT.h"
 
 /******************************************
   Global Data TYPES AND STRUCTURES

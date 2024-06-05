@@ -32,6 +32,8 @@
 
 #include "BUTTONS_INT.h"
 
+#include "OFFOPTION_INT.h"
+
 /******************************************
   Global Data TYPES AND STRUCTURES
 *******************************************/

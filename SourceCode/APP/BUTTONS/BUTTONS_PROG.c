@@ -8,22 +8,26 @@
 
 #include "BUTTONS_INT.h"
 
-u8 EEPROM_counter ;
+u8 EEPROM_counter;
+
+extern u32 OvCounter;
 
 void Up_Button(){
-	EEPROM_ReadByteNACK(&EEPROM_counter,0x1);
+	OvCounter = 0;
+	EEPROM_ReadByteNACK(&EEPROM_counter,0x10);
 	_delay_ms(100);
 	EEPROM_counter++;
-	EEPROM_SendByte(EEPROM_counter,0x1);
+	EEPROM_SendByte(EEPROM_counter,0x10);
 	_delay_ms(100);
 	UART_sendNum(EEPROM_counter);
 }
 
 void Down_Button(){
-	EEPROM_ReadByteNACK(&EEPROM_counter,0x1);
+	OvCounter = 0;
+	EEPROM_ReadByteNACK(&EEPROM_counter,0x10);
 	_delay_ms(100);
 	EEPROM_counter--;
-	EEPROM_SendByte(EEPROM_counter,0x1);
+	EEPROM_SendByte(EEPROM_counter,0x10);
 	_delay_ms(100);
 	UART_sendNum(EEPROM_counter);
 }
@@ -45,13 +49,8 @@ void ButtonsInit(){
 	EXT_setcallbackInt1(Down_Button);
 
 	//Get saved temperature
-	EEPROM_ReadByteNACK(&EEPROM_counter,0x1);
+	EEPROM_ReadByteNACK(&EEPROM_counter,0x10);
 	_delay_ms(100);
 	UART_sendNum(EEPROM_counter);
 
-}
-
-
-void ButtonsPushed(u8* UserSetTemp_ptr){
-	*UserSetTemp_ptr = EEPROM_counter;
 }
