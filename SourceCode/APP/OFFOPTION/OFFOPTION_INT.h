@@ -1,12 +1,12 @@
 /*
- * BUTTON_INT.h
+ * OFFOPTION_INT.h
  *
- *  Created on: Jun 1, 2024
+ *  Created on: Jun 5, 2024
  *      Author: ahmed
  */
 
-#ifndef APP_BUTTONS_BUTTONS_INT_H_
-#define APP_BUTTONS_BUTTONS_INT_H_
+#ifndef APP_OFFOPTION_OFFOPTION_INT_H_
+#define APP_OFFOPTION_OFFOPTION_INT_H_
 
 /******************************************
   INCLUDES
@@ -16,13 +16,7 @@
 
 #include "GI_INT.h"
 
-#include "EXT_INT.h"
-
-#include "UART_INT.h"
-
-#include "EEPROM_INT.h"
-
-#include "OFFOPTION_INT.h"
+#include "TIMER0_INT.h"
 
 /******************************************
   Global Data TYPES AND STRUCTURES
@@ -43,6 +37,6 @@
   GLOBAL FUNCTIONS Prototypes
 *******************************************/
 
-void ButtonsInit();
+void OFFOPTION_init();
 
-#endif /* APP_BUTTONS_BUTTONS_INT_H_ */
+#endif /* APP_OFFOPTION_OFFOPTION_INT_H_ */

@@ -7,13 +7,12 @@
 
 #include "main.h"
 
-//extern u8 EEPROM_counter;
+extern u8 EEPROM_counter;
+
+extern BOOL OffFlage;
 
 int main(){
-
-
 	u8 UserSetTemp, set_speed;
-
 
 	//Temperature initialize
 	TEMPCheckInit();
@@ -31,15 +30,16 @@ int main(){
 	CoolingInit();
 
 	//Buttons initialize
-	ButtonsInit();
+	//ButtonsInit();
 
 	//EEPROM initialize
 	EEPROM_Init();
 
-
+	//OFFOPTION initialize
+	OFFOPTION_init();
 
 	while(1){
-		ButtonsPushed(&UserSetTemp);
+		UserSetTemp = EEPROM_counter;
 
 		SS_writeNum(UserSetTemp);
 
@@ -56,7 +56,7 @@ int main(){
 			CoolingChoise(COOLINGSTOP);
 		}
 		//Real temp is Equal to User set temp
-		else{
+		else if(TEMPCheckStart()==UserSetTemp || OffFlage==TRUE){
 			HeatingChoise(HEATINGSTOP);
 			CoolingChoise(COOLINGSTOP);
 		}
