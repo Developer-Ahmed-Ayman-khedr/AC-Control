@@ -30,13 +30,13 @@ int main(){
 	CoolingInit();
 
 	//Buttons initialize
-	//ButtonsInit();
+	ButtonsInit();
 
 	//EEPROM initialize
 	EEPROM_Init();
 
 	//OFFOPTION initialize
-	OFFOPTION_init();
+	//OFFOPTION_init();
 
 	while(1){
 		UserSetTemp = EEPROM_counter;

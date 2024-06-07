@@ -22,7 +22,7 @@ void OffFunction(){
 	DIO_togglePinValue(DIO_PIND6);
 }
 
-void OFFOPTION_init(){
+/*void OFFOPTION_init(){
 
 	DIO_setPinDir(DIO_PIND6,DIO_OUTPUT);
 
@@ -35,4 +35,4 @@ void OFFOPTION_init(){
 	TIMER0_setPreload(0);
 
 	TIMER0_start(TIMER0_DIV64);
-}
+}*/
