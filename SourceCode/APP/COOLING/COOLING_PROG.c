@@ -21,11 +21,9 @@ void CoolingInit(){
 void CoolingChoise(u8 speed){
 	if(speed>COOLINGSTOP){
 		//Start Timer FPWM
-		//TIMER1_initFastPwmMod14();
+		TIMER1_initFastPwmMod14();
 
-		//TIMER1_setFrequency(50);
-
-		//TIMER1_setOcr(speed);
+		TIMER1_setOcr(speed);
 
 		//Start Motor
 		DIO_setPinValue(DIO_PINC3,DIO_HIGH);

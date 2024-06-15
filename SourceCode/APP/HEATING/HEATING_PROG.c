@@ -22,8 +22,6 @@ void HeatingChoise(u8 speed){
 		//Start Timer FPWM
 		TIMER1_initFastPwmMod14();
 
-		TIMER1_setFrequency(50);
-
 		TIMER1_setOcr(speed);
 
 

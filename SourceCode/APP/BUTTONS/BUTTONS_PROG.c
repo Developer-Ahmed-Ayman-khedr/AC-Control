@@ -42,6 +42,9 @@ void ButtonsInit(){
 	//Initialize External Interrupt 1 for Down Button
 	EXT_int1Int(EXT_RISING);
 
+	//Set initial value for EEPROM
+	//EEPROM_SendByte(30,0x10);
+
 	//Up Button
 	EXT_setcallbackInt0(Up_Button);
 
@@ -53,4 +56,8 @@ void ButtonsInit(){
 	_delay_ms(100);
 	UART_sendNum(EEPROM_counter);
 
+}
+
+u8 ButtunsReturnEEPROM(){
+	return EEPROM_counter;
 }
