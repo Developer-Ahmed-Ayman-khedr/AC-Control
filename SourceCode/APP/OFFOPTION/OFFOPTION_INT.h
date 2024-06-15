@@ -39,4 +39,6 @@
 
 void OFFOPTION_init();
 
+BOOL OFFOPTIONReturnOffFlage();
+
 #endif /* APP_OFFOPTION_OFFOPTION_INT_H_ */
