@@ -1,6 +1,6 @@
 # AC-Control
 
-**An A.C that does Temprature checking, Cooling, Heating, Increasing and decreasing set Temprature using Buttons and sending it to the user using UART Protocol and after 5 seconds the system shuts down.**
+**An A.C that does Temperature checking, Cooling, Heating, Increasing and decreasing set Temperature using Buttons and sending it to the user using UART Protocol and after 5 seconds the system shuts down.**
 
 ## Description
 
@@ -10,10 +10,10 @@ This project uses AVR ATMEGA32 by Microchip Technology as The Microcontroller th
 
 Things you can do with this system
 
-- Temprature Check.
+- Temperature Check.
 - Cooling.
 - Heating.
-- Buttons to increase and decrease the temprature.
+- Buttons to increase and decrease the temperature.
 - Send the user set temp to the user using UART.
 - Off option tho stop working after 5 seconds.
 
