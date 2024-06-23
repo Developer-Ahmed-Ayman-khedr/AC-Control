@@ -46,4 +46,7 @@ void SS_init();
 //Send
 void SS_writeNum(u8 num);
 
+//Deinitialize
+void SS_deinit();
+
 #endif /* HAL_SS_SS_INT_H_ */

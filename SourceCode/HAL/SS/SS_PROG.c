@@ -6,6 +6,7 @@
  */
 
 #include "SS_INT.h"
+
 //Initialize
 void SS_init(){
 	DIO_setPinDir(SS_S0,DIO_OUTPUT);
@@ -15,6 +16,17 @@ void SS_init(){
 
 	DIO_setPinDir(SS_ENABLE1,DIO_OUTPUT);
 	DIO_setPinDir(SS_ENABLE2,DIO_OUTPUT);
+}
+
+//Deinitialize
+void SS_deinit(){
+	//enable1
+	DIO_setPinValue(SS_ENABLE1,DIO_LOW);
+	_delay_ms(1);
+
+	//enable2
+	DIO_setPinValue(SS_ENABLE2,DIO_LOW);
+	_delay_ms(1);
 }
 
 //Send
