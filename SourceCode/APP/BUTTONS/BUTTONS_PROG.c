@@ -10,6 +10,8 @@
 
 u8 EEPROM_counter;
 
+BOOL onoffstate = FALSE;
+
 extern u32 OvCounter;
 
 void Up_Button(){
@@ -32,24 +34,37 @@ void Down_Button(){
 	UART_sendNum(EEPROM_counter);
 }
 
+void OnOff_Button(){
+	if(onoffstate==FALSE){
+		onoffstate = TRUE;
+	}
+	else if(onoffstate==TRUE){
+		onoffstate = FALSE;
+		SS_deinit();
+	}
+}
+
 void ButtonsInit(){
 
 	GI_enable();
 
 	//Initialize External Interrupt 0 for Up Button
+	DIO_setPinDir(DIO_PIND2,DIO_INPUT);
 	EXT_int0Int(EXT_RISING);
+	EXT_setcallbackInt0(Up_Button);
 
 	//Initialize External Interrupt 1 for Down Button
+	DIO_setPinDir(DIO_PIND3,DIO_INPUT);
 	EXT_int1Int(EXT_RISING);
+	EXT_setcallbackInt1(Down_Button);
+
+	//Initialize External Interrupt 1 for ON-OFF Button
+	DIO_setPinDir(DIO_PINB2,DIO_INPUT);
+	EXT_int2Int(EXT_RISING);
+	EXT_setcallbackInt2(OnOff_Button);
 
 	//Set initial value for EEPROM
 	//EEPROM_SendByte(30,0x10);
-
-	//Up Button
-	EXT_setcallbackInt0(Up_Button);
-
-	//Down Button
-	EXT_setcallbackInt1(Down_Button);
 
 	//Get saved temperature
 	EEPROM_ReadByteNACK(&EEPROM_counter,0x10);
@@ -60,4 +75,8 @@ void ButtonsInit(){
 
 u8 ButtunsReturnEEPROM(){
 	return EEPROM_counter;
+}
+
+BOOL ButtunsReturnonoffstate(){
+	return onoffstate;
 }

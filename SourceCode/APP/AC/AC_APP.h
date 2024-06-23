@@ -1,12 +1,12 @@
 /*
- * main.h
+ * AC_APP.h
  *
- *  Created on: May 28, 2024
+ *  Created on: Jun 23, 2024
  *      Author: ahmed
  */
 
-#ifndef APP_MAIN_H_
-#define APP_MAIN_H_
+#ifndef APP_AC_AC_APP_H_
+#define APP_AC_AC_APP_H_
 
 /******************************************
   INCLUDES
@@ -53,6 +53,6 @@
   GLOBAL FUNCTIONS Prototypes
 *******************************************/
 
-int main();
+void AC_APP();
 
-#endif /* APP_MAIN_H_ */
+#endif /* APP_AC_AC_APP_H_ */
