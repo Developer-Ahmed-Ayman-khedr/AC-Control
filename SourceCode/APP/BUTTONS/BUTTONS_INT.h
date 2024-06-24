@@ -47,4 +47,6 @@ void ButtonsInit();
 
 u8 ButtunsReturnEEPROM();
 
+BOOL ButtunsReturnonoffstate();
+
 #endif /* APP_BUTTONS_BUTTONS_INT_H_ */
