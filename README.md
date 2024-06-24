@@ -4,7 +4,7 @@
 
 ## Description
 
-This project uses AVR ATMEGA32 by Microchip Technology as The Microcontroller the does the control of the Heating of Cooling Elements and sends the user set temprature to the user using UART.
+This project uses AVR ATMEGA32 by Microchip Technology as The Microcontroller the does the control of the Heating and Cooling Elements, and sends the user set temprature to the user using UART.
 
 . Access the code files [here](https://github.com/Developer-Ahmed-Ayman-khedr/AC-Control/blob/master/SourceCode/APP/main.c "AC Control").
 
