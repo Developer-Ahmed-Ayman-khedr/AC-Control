@@ -4,7 +4,7 @@
 
 ## Description
 
-This project uses AVR ATMEGA32 by Microchip Technology as The Microcontroller the does the control of the Heating and Cooling Elements, sends the user set temprature to the user using UART protocol, and save the set temp in EEPROM using I2C protocol.
+This project uses AVR ATMEGA32 by Microchip Technology as The Microcontroller the does the control of the Heating and Cooling Elements, sends the user set temperature to the user using UART protocol, and save the set temp in EEPROM using I2C protocol.
 
 . Access the code files [here](https://github.com/Developer-Ahmed-Ayman-khedr/AC-Control/blob/master/SourceCode/APP/main.c "AC Control").
 
@@ -16,6 +16,7 @@ Things you can do with this system
 - Buttons to increase and decrease the temperature.
 - Send the user set temp to the user using UART.
 - Off option tho stop working after 5 seconds.
+- save the set temp in EEPROM using I2C protocol.
 
 ## Requirements for using it
 
