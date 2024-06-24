@@ -39,7 +39,7 @@ void AC_APP(){
 
 	while(1){
 
-		if(ButtunsReturnonoffstate==TRUE){
+		if(ButtunsReturnonoffstate()==TRUE){
 			PROG_STATE = TRUE;
 		}
 

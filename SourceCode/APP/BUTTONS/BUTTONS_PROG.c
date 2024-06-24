@@ -40,7 +40,6 @@ void OnOff_Button(){
 	}
 	else if(onoffstate==TRUE){
 		onoffstate = FALSE;
-		SS_deinit();
 	}
 }
 
